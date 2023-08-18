@@ -1,0 +1,64 @@
+/* Global Declaration  */
+
+body,
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+form {
+  border: 1px solid wheat;
+  border-radius: 10px;
+  width: 400px;
+  margin: 10rem auto;
+  padding: 0 1rem;
+  box-shadow: 0 5px 10px #47ceff87;
+}
+
+.form-header {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  color: #030303c3;
+}
+
+input {
+  height: 40px;
+  width: 95%;
+  margin: 0.3rem auto 2rem auto;
+  border-radius: 5px;
+  border: 1px solid #030303c3;
+  outline: none;
+  padding-left: 5px;
+}
+
+button {
+  display: block;
+  width: 95%;
+  margin: 1rem auto;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px transparent;
+  cursor: pointer;
+}
+
+button:nth-last-of-type(2) {
+  color: #fff;
+  background-color: rgba(0, 89, 255, 0.729);
+}
+
+button:nth-last-of-type(1) {
+  color: #000;
+  background-color: rgba(0, 89, 255, 0.178);
+}
+
+.form-bottom {
+  padding: 0 0.8rem;
+}
