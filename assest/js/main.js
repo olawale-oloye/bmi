@@ -25,22 +25,25 @@ form.addEventListener("submit", function (e) {
       errorTxt.innerHTML = "";
     }, 3000);
   }
-  const heightInMeters = height.value / 10;
+  const heightInMeters = height.value / 100;
   console.log(typeof heightInMeters, heightInMeters);
-  const bmiValue = 100 * (weight.value / (heightInMeters * heightInMeters));
+  const bmiValue = weight.value / heightInMeters ** 2;
   //   console.log(typeof Number(bmiValue.toFixed(2)));
   //   console.log(typeof +bmiValue.toFixed(2));
   bmiOutcome.textContent = bmiValue.toFixed(2);
 
   if (+bmiValue.toFixed(2) < 18.5) {
-    statusBmi.textContent = "You are under weight";
+    statusBmi.textContent = "You are underweight";
   } else if (+bmiValue.toFixed(2) >= 18.5 && +bmiValue.toFixed(2) <= 24.9) {
     statusBmi.textContent = "You are healthy weight";
   } else if (+bmiValue.toFixed(2) >= 25 && +bmiValue.toFixed(2) <= 29.9) {
-    statusBmi.textContent = "You are over weight";
-  } else +bmiValue.toFixed(2) >= 30;
-  {
-    bmiValue.textContent = "You are obese";
+    statusBmi.textContent = "You are overweight";
+  } else if (+bmiValue.toFixed(2) >= 30 && +bmiValue.toFixed(2) <= 34.9) {
+    statusBmi.textContent = "You are Obesity Class I";
+  } else if (+bmiValue.toFixed(2) >= 35 && +bmiValue.toFixed(2) <= 39.9) {
+    statusBmi.textContent = "You are Obesity Class II";
+  } else if (+bmiValue.toFixed(2) >= 40) {
+    statusBmi.textContent = "You are Obesity Class III";
   }
 });
 
@@ -48,6 +51,7 @@ form.addEventListener("submit", function (e) {
 
 reset.addEventListener("click", function () {
   bmiOutcome.textContent = "";
+  statusBmi.textContent = "";
 });
 
 // Control Structures using If
